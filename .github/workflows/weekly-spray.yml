@@ -1,0 +1,22 @@
+name: WeeklySpray
+
+# Controls when the workflow will run
+on:
+  schedule: ## Schedule the job to run at 12.am daily.
+    - cron: 5 8 * * 0
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "spray"
+  spray:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs the script
+      - name: Install & execute
+        run: |
+          npm i -g github-spray
+          github-spray -t "./abot\." --multiplier 10 --push --force --origin https://github.com/andreasbotsikas/github-spray-commits.git
