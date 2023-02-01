@@ -25,7 +25,8 @@ jobs:
       # Runs the script
       - name: Install & execute
         run: |
+          git config --global init.defaultBranch master
           git config --global user.email "andreasbotsikas@users.noreply.github.com"
           git config --global user.name "Andreas Botsikas"
           npm i -g github-spray
-          github-spray -t "./abot\." --multiplier 10 --push --force --origin https://github.com/andreasbotsikas/github-spray-commits.git
+          github-spray -t "./abot\." --multiplier 10 --push --force --origin https://github.com/andreasbotsikas/github-spray-commits
