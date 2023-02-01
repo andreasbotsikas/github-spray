@@ -20,6 +20,8 @@ jobs:
         with:
           # Repository name with owner. For example, actions/checkout
           repository: andreasbotsikas/github-spray-commits
+          token: ${{ secrets.REPO_PAT }}
+          persist-credentials: true
       # Runs the script
       - name: Install & execute
         run: |
