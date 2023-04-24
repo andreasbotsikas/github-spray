@@ -12,3 +12,8 @@ Open a workspace and use the following code to replicate:
 npm i -g github-spray
 github-spray -t "./abot\." --multiplier 10 --push --force --origin https://github.com/andreasbotsikas/github-spray-commits.git
 ```
+
+Notes: You will need to modify the `github-spray` to point to main instead of master.
+
+- Open codespace in the target repo and generate spray
+- Navigate in generated folder and push using `-force` option to replace history.
